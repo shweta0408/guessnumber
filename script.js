@@ -12,8 +12,18 @@ document.querySelector(".guess").value = Math.trunc(Math.random() * 20);
 console.log(document.querySelector(".guess").value);
 */
 
-document.querySelector(".check").addEventListener("click", function () {
-  console.log(document.querySelector(".guess").value);
-});
+const number = Math.trunc(Math.random() * 21);
 
-console.log("hello people");
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
+
+  console.log(guess, typeof guess);
+
+  if (guess === number) {
+    document.querySelector(".message").textContent = "Correct";
+  } else {
+    console.log(
+      (document.querySelector(".message").textContent = "Not Correct")
+    );
+  }
+});
